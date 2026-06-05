@@ -1096,3 +1096,45 @@ footer::before {
     .admin-header, .admin-body, .admin-footer { padding-left: 1rem; padding-right: 1rem; }
     .msg-cell { max-width: 100px; }
 }
+/* Mobile Responsive Fix */
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hero-image-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .profile-img {
+        width: 250px;
+        max-width: 90%;
+        height: auto;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .summary {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}
