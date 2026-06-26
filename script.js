@@ -301,17 +301,24 @@ if (form) {
                     btn.style.background = '';
                 }, 3000);
             })
-            .catch(err => {
-                clearTimeout(timeoutId);
-                console.error('EmailJS error:', err);
-                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed. Try Again.';
-                btn.style.background = 'linear-gradient(135deg, #ff3d00, #ff6d00)';
-                btn.disabled = false;
-                setTimeout(() => {
-                    btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-                    btn.style.background = '';
-                }, 3000);
-            });
+            .catch((err) => {
+    clearTimeout(timeoutId);
+
+    console.log("Full EmailJS Error:", err);
+    console.log("Status:", err.status);
+    console.log("Message:", err.text);
+
+    alert("Status: " + err.status + "\nMessage: " + err.text);
+
+    btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed. Try Again.';
+    btn.style.background = 'linear-gradient(135deg, #ff3d00, #ff6d00)';
+    btn.disabled = false;
+
+    setTimeout(() => {
+        btn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+        btn.style.background = '';
+    }, 3000);
+});
     });
 }
 
